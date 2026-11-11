@@ -41,6 +41,7 @@ fun HomeScreen(
         }
 
         // Hardware Status Capsule
+        val defaultPeripheral = "3-Axis Vibration Accelerometer + Modbus RS485 Acoustic Probe"
         Card(
             shape = RoundedCornerShape(16.dp),
             colors = CardDefaults.cardColors(containerColor = BrandAccentGlow),
@@ -52,7 +53,7 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: '3-Axis Vibration Accelerometer + Modbus RS485 Acoustic Probe'}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
+                    Text("العتاد الحي: ${state.telemetry?.peripheralName ?: defaultPeripheral}", fontWeight = FontWeight.Bold, color = BrandPrimary, fontSize = 13.sp)
                     Text(state.telemetry?.liveReading ?: "3-Axis Accel: X=0.8g Y=0.2g Z=0.5g | Acoustic: 68dB @ 4kHz | Modbus RS485: OK", fontSize = 11.sp, color = BrandTextSecondary)
                 }
                 Badge(containerColor = BrandPrimary) {
